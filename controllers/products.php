@@ -27,4 +27,5 @@ $products = [
     'category' => 'Furniture'
   ]
   ];
+$page_name = 'Products';
 require './views/products.view.php';

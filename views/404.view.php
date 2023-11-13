@@ -1,6 +1,5 @@
 <?php require('partials/head.php'); ?>
-    <h1>
-      <?= $header; ?>
-    </h1>
+  <main>
+    <p>Page could not be found</p>
   </main>
 <?php require('partials/footer.php'); ?>
