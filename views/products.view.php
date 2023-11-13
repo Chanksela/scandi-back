@@ -8,4 +8,4 @@
 					<?php endforeach; ?>
 			</ul>
 		</main>
-<?php require('partials/footer.php'); ?>
+<?php require('partials/foot.php'); ?>

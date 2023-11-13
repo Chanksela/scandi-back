@@ -2,4 +2,4 @@
   <main>
     <p>Page could not be found</p>
   </main>
-<?php require('partials/footer.php'); ?>
+<?php require('partials/foot.php'); ?>
