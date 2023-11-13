@@ -27,4 +27,5 @@ $products = [
     'category' => 'Furniture'
   ]
   ];
+require './functions.php';
 require './views/products.view.php';

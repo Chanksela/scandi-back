@@ -8,7 +8,6 @@
 	</head>
 	<body>
 		<main>
-		
 			<ul>
 				<?php foreach ($products as $product) : ?>
 					<li>
