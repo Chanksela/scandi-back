@@ -8,7 +8,8 @@ $config = require 'config.php';
 
 $db = new Database($config['database']);
 
-$products = $db->query("SELECT * FROM products")->fetchAll();
+$query = "SELECT * FROM products";
+$products = $db->query($query)->fetchAll();
 foreach ($products as $product) {
     echo "<li>" . $product['name'] . " - " . $product['price'] . "</li>";
 }
