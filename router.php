@@ -3,7 +3,7 @@
 $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 
 $routes = [
-    '/products' => 'controllers/products.php',
+    '/' => 'controllers/products.php',
     '/add-item' => 'controllers/add-item.php'
 ];
 
@@ -17,7 +17,6 @@ function loadTheUri($uri, $routes)
     } else {
         abort(404);
     }
-
 }
 
 function abort($status = 404)
