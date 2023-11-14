@@ -4,11 +4,11 @@ require 'functions.php';
 require 'Database.php';
 // require 'router.php';
 
+$config = require 'config.php';
 
+$db = new Database($config['database']);
 
-$db = new Database();
-
-$products = $db->query("SELECT * FROM products")->fetchAll(PDO::FETCH_ASSOC);
+$products = $db->query("SELECT * FROM products")->fetchAll();
 foreach ($products as $product) {
     echo "<li>" . $product['name'] . " - " . $product['price'] . "</li>";
 }
