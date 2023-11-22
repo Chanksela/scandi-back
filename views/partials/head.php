@@ -7,3 +7,6 @@
 		<link rel="stylesheet" href="/public/styles/base.css">
 	</head>
 	<body>
+		<header>
+			<?php include('nav.php') ?>
+		</header>
