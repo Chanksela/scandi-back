@@ -2,4 +2,4 @@
 
 $header = 'Add Item';
 $page_name = 'Add Item';
-require './views/add-item.view.php';
+require base_path('views/create.view.php');
