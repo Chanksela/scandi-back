@@ -18,10 +18,8 @@ function abort($status = 404)
     die();
 }
 
-$routes = [
-    '/' => 'controllers/index.php',
-    '/add-item' => 'controllers/create.php'
-];
+
+require base_path('routes.php');
 $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 
 
