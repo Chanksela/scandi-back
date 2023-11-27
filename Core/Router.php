@@ -1,5 +1,7 @@
 <?php
 
+namespace Core;
+
 class Router
 {
     protected $routes = [];
@@ -29,4 +31,22 @@ class Router
     {
         return $this->add('DELETE', $uri, $controller);
     }
+    public function route($uri, $method)
+    {
+        foreach($this->routes as $route) {
+            if($route['uri'] === $uri && $route['method'] === $method) {
+                http_response_code(200);
+                return require base_path($route['controller']);
+            }
+        }
+        $this->abort();
+    }
+
+    protected function abort($status = 404)
+    {
+        http_response_code($status);
+        require "controllers/$status.php";
+        die();
+    }
+
 }
