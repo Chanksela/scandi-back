@@ -10,5 +10,4 @@ $db = new Database($config['database']);
 $query = "SELECT * FROM products";
 $products = $db->query($query)->fetchAll();
 
-
-view('index.view.php', ['page_name' => 'Products', 'products' => $products]);
+echo json_encode(['products' => $products]);
