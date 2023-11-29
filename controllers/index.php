@@ -8,6 +8,6 @@ $config = require base_path('config.php');
 $db = new Database($config['database']);
 
 $query = "SELECT * FROM products";
-$products = $db->query($query)->fetchAll();
+$products = $db->query($query)->fetchAll(PDO::FETCH_ASSOC);
 
 echo json_encode(['products' => $products]);
