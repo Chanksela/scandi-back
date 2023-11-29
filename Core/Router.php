@@ -45,7 +45,7 @@ class Router
     protected function abort($status = 404)
     {
         http_response_code($status);
-        require "controllers/$status.php";
+        require base_path("controllers/$status.php");
         die();
     }
 
