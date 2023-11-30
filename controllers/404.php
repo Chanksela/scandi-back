@@ -1,4 +1,4 @@
 <?php
 
 $header = '404';
-require './views/404.view.php';
+require base_path('./views/404.view.php');
