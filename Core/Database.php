@@ -21,6 +21,5 @@ class Database
         $statement = $this->pdo->prepare($query);
         $statement->execute($parameters);
         return $statement;
-        ;
     }
 }

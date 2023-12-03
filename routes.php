@@ -8,4 +8,4 @@
 
 $router->get('/', 'controllers/index.php');
 $router->delete('/product', 'controllers/destroy.php');
-$router->get('/add-item', 'controllers/create.php');
+$router->post('/product', 'controllers/store.php');
