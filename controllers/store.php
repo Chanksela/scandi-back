@@ -10,8 +10,9 @@ $db = new Database($config['database']);
 $rawData = file_get_contents("php://input");
 // JSON data to associate array
 $data = json_decode($rawData, true);
-if($data['productType'] === "DVD") {
-    $query = "INSERT INTO products (sku, name, price, type, parameters) VALUES (:sku, :name, :price, :productType, :parameters)";
+// dd($data);
+if($data['productType'] === "1") {
+    $query = "INSERT INTO products (sku, name, price, type_id, parameters) VALUES (:sku, :name, :price, :productType, :parameters)";
     $params = [
         'sku' => $data['sku'],
         'name' => $data['name'],
@@ -20,8 +21,8 @@ if($data['productType'] === "DVD") {
         'parameters' => $data['size']
     ];
     $db->query($query, $params);
-} elseif($data['productType'] === "Book") {
-    $query = "INSERT INTO products (sku, name, price, type, parameters) VALUES (:sku, :name, :price, :productType, :parameters)";
+} elseif($data['productType'] === "2") {
+    $query = "INSERT INTO products (sku, name, price, type_id, parameters) VALUES (:sku, :name, :price, :productType, :parameters)";
     $params = [
         'sku' => $data['sku'],
         'name' => $data['name'],
@@ -31,8 +32,8 @@ if($data['productType'] === "DVD") {
     ];
     $db->query($query, $params);
 
-} elseif ($data['productType'] === "Furniture") {
-    $query = "INSERT INTO products (sku, name, price, type, parameters) VALUES (:sku, :name, :price, :productType, :parameters)";
+} elseif ($data['productType'] === "3") {
+    $query = "INSERT INTO products (sku, name, price, type_id, parameters) VALUES (:sku, :name, :price, :productType, :parameters)";
     $params = [
         'sku' => $data['sku'],
         'name' => $data['name'],
