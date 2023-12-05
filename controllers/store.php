@@ -1,6 +1,7 @@
 <?php
 
 use Core\Database;
+use Core\Validator;
 
 $config = require base_path('config.php');
 $db = new Database($config['database']);
@@ -17,6 +18,11 @@ $params = [
       'price' => $data['price'],
       'productType' => $data['productType'],
   ];
+
+
+
+Validator::skuExists($count, $db, $params);
+
 
 if($data['productType'] === "1") {
     $query = "INSERT INTO products (sku, name, price, type_id, parameters) VALUES (:sku, :name, :price, :productType, :parameters)";
