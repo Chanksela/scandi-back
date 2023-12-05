@@ -20,8 +20,7 @@ $params = [
   ];
 
 
-
-Validator::skuExists($count, $db, $params);
+Validator::validateForm($count, $db, $params);
 
 
 if($data['productType'] === "1") {
