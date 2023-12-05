@@ -4,7 +4,7 @@ namespace Core;
 
 class Validator
 {
-    public static function validateForm($count, $db, $params)
+    public static function validateForm($db, $params)
     {
         $query = "SELECT COUNT(*) FROM products WHERE sku = :sku";
         $result = $db->query($query, ['sku' => $params['sku']]);
@@ -25,11 +25,5 @@ class Validator
             http_response_code(404);
             exit;
         }
-
-
     }
-
-
-
-
 }
