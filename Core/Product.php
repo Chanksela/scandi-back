@@ -59,9 +59,9 @@ class Product
               'price' => $data['price'],
               'productType' => $data['productType'],
           ];
+        dd($_REQUEST);
 
-
-        Validator::validateForm($db, $params);
+        // Validator::validateForm($db, $params);
 
         $query = "INSERT INTO products (sku, name, price, type_id, parameters) VALUES (:sku, :name, :price, :productType, :parameters)";
 
