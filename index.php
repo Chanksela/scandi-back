@@ -7,9 +7,7 @@ spl_autoload_register(function ($class) {
     require base_path("{$class}.php");
 });
 
-header("Access-Control-Allow-Origin: *");
-header("Access-Control-Allow-Methods: GET, POST, DELETE");
-header("Access-Control-Allow-Headers: Content-Type");
+
 
 if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
     header("Access-Control-Allow-Origin: *");
@@ -19,10 +17,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
     exit;
 }
 
-
-
-
-
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: GET, POST, DELETE");
+header("Access-Control-Allow-Headers: Content-Type");
 
 $router = new \Core\Router();
 
