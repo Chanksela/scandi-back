@@ -7,7 +7,7 @@ spl_autoload_register(function ($class) {
     require base_path("{$class}.php");
 });
 
-header("Access-Control-Allow-Origin: https://scand-client.vercel.app/");
+header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: GET, POST, DELETE");
 header("Access-Control-Allow-Headers: Content-Type");
 
