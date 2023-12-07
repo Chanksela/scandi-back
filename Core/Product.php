@@ -51,29 +51,29 @@ class Product
     public static function store($db)
     {
 
-        $data = self::getRawData();
+        // $data = self::getRawData();
 
         $params = [
-              'sku' => $data['sku'],
-              'name' => $data['name'],
-              'price' => $data['price'],
-              'productType' => $data['productType'],
+              'sku' => $_POST['sku'],
+              'name' => $_POST['name'],
+              'price' => $_POST['price'],
+              'productType' => $_POST['productType'],
           ];
-        dd($_REQUEST);
+        // dd($_POST);
 
         // Validator::validateForm($db, $params);
 
         $query = "INSERT INTO products (sku, name, price, type_id, parameters) VALUES (:sku, :name, :price, :productType, :parameters)";
 
 
-        if($data['productType'] === "1") {
-            $params['parameters'] = [$data['size']];
+        if($_POST['productType'] === "1") {
+            $params['parameters'] = [$_POST['size']];
             $db->query($query, $params);
-        } elseif($data['productType'] === "2") {
-            $params['parameters'] = $data['weight'];
+        } elseif($_POST['productType'] === "2") {
+            $params['parameters'] = $_POST['weight'];
             $db->query($query, $params);
-        } elseif ($data['productType'] === "3") {
-            $params['parameters'] = [$data['height'], $data['width'], $data['length']];
+        } elseif ($_POST['productType'] === "3") {
+            $params['parameters'] = [$_POST['height'], $_POST['width'], $_POST['length']];
             $db->query($query, $params);
         } else {
             echo json_encode(['error' => 'Something wen wrong']);
