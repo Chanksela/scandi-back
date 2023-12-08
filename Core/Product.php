@@ -10,7 +10,7 @@ class Product
     {
         $query = "SELECT * FROM products";
         $products = $db->query($query)->fetchAll(PDO::FETCH_ASSOC);
-        echo json_encode($products);
+        return $products;
     }
     public static function destroy($db)
     {
@@ -73,7 +73,7 @@ class Product
             $params['parameters'] = $data['weight'];
             $db->query($query, $params);
         } elseif ($data['productType'] === "3") {
-            $params['parameters'] = [$data['height'], $data['width'], $data['length']];
+            $params['parameters'] = [$data['height'] . 'x' . $data['width'] . "x" . $data['length']];
             $db->query($query, $params);
         } else {
             echo json_encode(['error' => 'Something wen wrong']);
