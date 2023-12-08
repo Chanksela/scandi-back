@@ -31,18 +31,18 @@ class Product
                 // delete data from the database depending on received IDs
                 $db->query($query);
                 // echo success message
-                echo json_encode(['success' => 'Products deleted successfully']);
+                $response = (['success' => 'Products deleted successfully']);
                 // Set the response status code to 200 (OK)
                 http_response_code(200);
             } else {
                 // in case some IDs do not exist in the database, echo error message
-                echo json_encode(['error' => 'Invalid request or missing data']);
+                $response = (['error' => 'Invalid request or missing data']);
                 // Set the response status code to 400 (Bad Request)
                 http_response_code(400);
             }
         } else {
             // in case no data received, echo error message
-            echo json_encode(['error' => 'Something wen wrong']);
+            $response = (['error' => 'Something went wrong']);
             // Set the response status code to 400 (Bad Request)
             http_response_code(400);
         }

@@ -11,10 +11,6 @@ spl_autoload_register(function ($class) {
     $class = str_replace('\\', '/', $class);
     require base_path("{$class}.php");
 });
-var_dump(require base_path('controllers/destroy.php'));
-
-
-
 
 
 $router = new \Core\Router();
