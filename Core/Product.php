@@ -10,7 +10,7 @@ class Product
     {
         $query = "SELECT * FROM products";
         $products = $db->query($query)->fetchAll(PDO::FETCH_ASSOC);
-        return $products;
+        echo json_encode($products);
     }
     public static function destroy($db)
     {
