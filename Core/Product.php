@@ -42,7 +42,7 @@ class Product
             }
         } else {
             // in case no data received, echo error message
-            $response = (['error' => 'Something went wrong']);
+            echo json_encode(['error' => 'Something went wrong']);
             // Set the response status code to 400 (Bad Request)
             http_response_code(400);
         }
