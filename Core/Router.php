@@ -34,7 +34,6 @@ class Router
     public function route($uri, $method)
     {
         foreach($this->routes as $route) {
-            dd($route['uri'], $uri, $route['method'], $method);
             if($route['uri'] === $uri && $route['method'] === $method) {
                 http_response_code(200);
                 return require base_path($route['controller']);
