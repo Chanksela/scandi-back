@@ -35,11 +35,6 @@ class Router
     {
         foreach($this->routes as $route) {
             if($route['uri'] === $uri && $route['method'] === $method) {
-
-                header("Access-Control-Allow-Origin: https://scand-client.vercel.app");
-                header("Access-Control-Allow-Methods: GET, POST, DELETE");
-                header("Access-Control-Allow-Headers: Content-Type");
-                header("Access-Control-Allow-Credentials: true");
                 http_response_code(200);
                 return require base_path($route['controller']);
             }
