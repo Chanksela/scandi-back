@@ -67,13 +67,13 @@ class Product
 
 
         if($data['productType'] === "1") {
-            $params['parameters'] = [$data['size']];
+            $params['parameters'] = $data['size'];
             $db->query($query, $params);
         } elseif($data['productType'] === "2") {
             $params['parameters'] = $data['weight'];
             $db->query($query, $params);
         } elseif ($data['productType'] === "3") {
-            $params['parameters'] = [$data['height'] . 'x' . $data['width'] . "x" . $data['length']];
+            $params['parameters'] = $data['height'] . 'x' . $data['width'] . "x" . $data['length'];
             $db->query($query, $params);
         } else {
             echo json_encode(['error' => 'Something wen wrong']);
