@@ -5,5 +5,5 @@ use Core\Product;
 
 $config = require base_path('config.php');
 $db = new Database($config['database']);
-
-Product::destroy($db);
+echo 'this is destroy.php';
+// Product::destroy($db);
